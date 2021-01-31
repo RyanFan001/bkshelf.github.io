@@ -8,4 +8,6 @@ nav_order: 2
 
 {: .no_toc }
 
-[SPMP](./SPMP.html)
+[Specifications](./specs.html) (2021/01/29)
+
+[SPMP](./SPMP.html) (2021/02/05)
