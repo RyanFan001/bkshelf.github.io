@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>bookshelf Software Requirement Specification</title>
+  </head>
+  <body style="background-color: LightGrey">
+    <h1 style="text-align: center" , id="#Top">bookshelf</h1>
+    <h1 style="text-align: center">Specifications Document</h1>
+    <h1>Table of Contents</h1>
+    <ul>
+      <li>
+        <a href="#Introduction">1. Introduction</a>
+      </li>
+      <ul>
+        <li><a href="#Purpose">1.1 Purpose</a></li>
+        <li><a href="#Scope">1.2 Scope</a></li>
+        <li><a href="#DAA">1.3 Definitions, acronyms, and abbreviations</a></li>
+        <li><a href="#Definitions">1.3.1 Definitions</a></li>
+        <li><a href="#Acronyms">1.3.2 Acronyms and Abbreviations</a></li>
+        <li><a href="#References">1.4 References</a></li>
+        <li><a href="#Overview">1.5 Overview</a></li>
+      </ul>
+      <li>
+        <a href="#Overall_Description">2. Overall Description</a>
+      </li>
+      <ul>
+        <li><a href="#Product_Perspective">2.1 Product perspective</a></li>
+        <li><a href="#Product_Functions">2.2 Product functions</a></li>
+        <li><a href="#User_Characteristics">2.3 User characteristics</a></li>
+        <li><a href="#Constraints">2.4 Constraints</a></li>
+        <li><a href="#Assumptions">2.5 Assumptions and dependencies</a></li>
+      </ul>
+      <li>
+        <a href="#Specific_Requirements">3. Specific Requirements</a>
+      </li>
+      <ul>
+        <li><a href="#External_Interfaces">3.1 External interfaces</a></li>
+        <li><a href="#Functions">3.2 Functions</a></li>
+      </ul>
+      <li>
+        <a href="#Authors">5. Authors</a>
+      </li>
+    </ul>
+
+    <h2 id="Introduction">1. Introduction</h2>
+    <h3 id="Purpose">1.1 Purpose</h3>
+    <p>
+      Bookshelf is a media tracking web-based application where users can log different media they have consumed. This document outlines the proposed bookshelf web-based application, its requirements and its goals. The intended audience is our client, David Brown, as well as our development team.
+    </p>
+    <h3 id="Scope">1.2 Scope</h3>
+    <p>
+      This document is an outline of the specifications and description of Bookshelf. This application will act as both a content-management system and a recommendation system. The application will offer a way to organize a collection of media, as well as recommend new personalized content curated for the user.
+    </p>
+    <h3 id="DAA">1.3 Definitions, acronyms, and abbreviations</h3>
+    <h3 id="Definitions">1.3.1 Definitions</h3>
+    <p>
+      <u>Friends</u>: Friends can be made by an individual by adding other users
+      they know on bookshelf. They can also be able to see what their friends
+      are currently interested in.
+    </p>
+    <p>
+      <u>My Bookshelf</u>: My Bookshelf contains the collection of media that is
+      curated by the user. My bookshelf can track the status of ongoing media as
+      well as suggest media based on the individual’s interests and likes.
+    </p>
+    <p>
+      <u>Registered User</u>: A user who has created an account and has logged
+      in.
+    </p>
+    <p><u>User</u>: An individual who accesses the website.</p>
+    <p>
+      <u>User Profile</u>: An individual’s directory of stored personal user
+      settings and information related to the user. The personal profile
+      provides functionality such as a list of tracking and storing media
+      collections.
+    </p>
+    <h3 id="Acronyms">1.3.2 Acronyms and Abbreviations</h3>
+    <p>
+      <u>API</u>: Application Program Interface. External software packages used in building this application.
+    </p>
+    <p>
+      <u>GUI</u>: Graphical User Interface. This is the interactive visual component for the software in which the user interacts. Ultimately consists of actions such as traditional buttons and information.
+    </p>
+    <p>
+      <u>SRS</u>: Software Requirements Specifications. This is the document that contains all requirements that describes the functionality the product needs to fulfill all stakeholders needs.
+    </p>
+    <h3 id="References">1.4 References</h3>
+    <a href="https://bohr.wlu.ca/cp317/notes/IEEE_830.pdf">IEEE SRS</a>
+    <br />
+    <h3 id="Overview">1.5 Overview</h3>
+    <p>
+      This SRS document is divided into four sections. Introduction, overall description, specific requirements, and supporting information. These are followed in order and each have their appropriate subsections. A table of contents is provided in supporting information for further information on the SRS layout.
+    </p>
+    <h2 id="Overall_Description">2. Overall description</h2>
+    <h3 id="Product_Perspective">2.1 Product perspective</h3>
+    <div style="width: 960px; height: 720px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:960px; height:720px" src="https://lucid.app/documents/embeddedchart/b804fb86-8146-4aba-9d18-0a6c67ef5768" id="Ac5aK6oe3PoK"></iframe>
+    </div>
+    <h3 id="#Functions">2.2 Product functions</h3>
+    <ul>
+      <li>Create and modify lists of mixed media (i.e. books, movies, tv, etc.) content</li>
+      <li>Track progress of media (i.e. tv show progress)</li>
+      <li>View a list of recommended media based on user’s lists</li>
+      <li>Rate media (i.e. likes, dislikes, stars, etc.) upon completion and during</li>
+      <li>Personal journal notes upon completion of a media series (i.e. tv show, book series) or one off content (i.e. movie without sequels, etc.)</li>
+      <li>Add and manage friend pages along with viewing friends public lists</li>
+    </ul>
+    <h3 id="User_Characteristics">2.3 User Characteristics</h3>
+    <p>The users of bookshelf will be of all ages, most forms of media will be included such as books, T.V. shows, recipes, etc. This wide range will maintain interest from users regardless of interest. Since bookshelf will be an online application, anyone with access to the internet will be able to create a profile. Experience on computers will not matter as bookshelf will be set up with the same vocabulary as websites such as Facebook, there should be no trouble setting up an account and profile.</p>
+    <h3 id="Constraints">2.4 Constraints</h3>
+    <p>The project includes development constraints. For example, time constraints and project reliability. We need to finish by the end of the semester on April 12, 2021. Then, there is no cost constraint for bookshelf as we will be using free software to implement the web-based application.</p>
+    <h3 id="Assumptions">2.5 Assumptions and dependencies</h3>
+    <p>It is assumed that all of our users have a functioning web-capable device with a browser which is able to connect with a network in order to log in to our web-based application. This application should function on any operating system.</p>
+    <h2 id="Specific_Requirements">3. Specific Requirements</h2>
+    <h3 id="External_Interfaces">3.1 External interfaces</h3>
+    <ul>
+      <li>The genre of a media resource entered by the user is used as a filter to find relevant resources.</li>
+      <li>There is a friend list where users can add and communicate with friends or other users of the site.</li>
+      <li>After users searched a specific resource they are able to see comments provided by other users and leave their own comments.</li>
+    </ul>
+    <h3 id="Functions">3.2 Functions</h3>
+    <ul>
+      <li>Clicking the login button gives the user the option to log in, register an account, or reset their password if they have forgotten it</li>
+      <li>Any capital letters entered by the users for searching resources are changed to small letters and spaces are removed to simplify searching. For example, "City Lights'' is compared as "citylights", and therefore are matched.</li>
+      <li>The system shall ensure that when a user attempts to create a comment they have the option to choose whether anonymous or not.</li>
+    </ul>
+
+    <h2 id="Authors">5. Authored by</h2>
+    <p>
+      Grant Westerholm [2021-02-10]: section 1<br />
+      Hayden Coulter [2021-02-10]: user characteristics<br />
+      Michael Hoang [2021-02-10]: product perspective, product functions<br />
+      Wei Li [2021-02-11]: External interfaces, functions
+    </p>
+    <p><a href="#Top">Back to top</a></p>
+  </body>
+</html>
