@@ -14,7 +14,7 @@
       <ul>
         <li><a href="#Purpose">1.1 Purpose</a></li>
         <li><a href="#Scope">1.2 Scope</a></li>
-        <li><a href="#DAA">1.3 Definitions, acronyms, and abbreviations</a></li>
+        <li><a href="#DAA">1.3 Definitions, Acronyms, and Abbreviations</a></li>
         <li><a href="#Definitions">1.3.1 Definitions</a></li>
         <li><a href="#Acronyms">1.3.2 Acronyms and Abbreviations</a></li>
         <li><a href="#References">1.4 References</a></li>
@@ -24,21 +24,41 @@
         <a href="#Overall_Description">2. Overall Description</a>
       </li>
       <ul>
-        <li><a href="#Product_Perspective">2.1 Product perspective</a></li>
-        <li><a href="#Product_Functions">2.2 Product functions</a></li>
-        <li><a href="#User_Characteristics">2.3 User characteristics</a></li>
+        <li><a href="#Product_Perspective">2.1 Product Perspective</a></li>
+        <li><a href="#Product_Functions">2.2 Product Functions</a></li>
+        <li><a href="#User_Characteristics">2.3 User Characteristics</a></li>
         <li><a href="#Constraints">2.4 Constraints</a></li>
-        <li><a href="#Assumptions">2.5 Assumptions and dependencies</a></li>
+        <li><a href="#Assumptions">2.5 Assumptions and Dependencies</a></li>
       </ul>
       <li>
         <a href="#Specific_Requirements">3. Specific Requirements</a>
       </li>
       <ul>
-        <li><a href="#External_Interfaces">3.1 External interfaces</a></li>
+        <li><a href="#External_Interfaces">3.1 External Interfaces</a></li>
         <li><a href="#Functions">3.2 Functions</a></li>
+        <li>
+          <li><a href="#Performance_Requirements">3.3 Performance Requirements</a></li>
+        </li>
+        <ul>
+          <li><a href="#Startup_Time">3.3.1 Startup Time</a></li>
+          <li><a href="#Navigation">3.3.2 Navigation</a></li>
+          <li><a href="#Edit_Response_Time">3.3.3 Edit Response Time</a></li>
+          <li><a href="#Additional_Performance_Requirementsnctions">3.3.4 Additional Performance Requirements</a></li>
+        </ul>
+        <li><a href="#Logical_Database_Requirements">3.4 Logical Database Requirements</a></li>
+        <li><a href="#Design_Constraints">3.5 Design Constraints</a></li>
+        <li>
+          <li><a href="#Software_System_Attributes">3.6 Software System Attributes</a></li>
+        </li>
+        <ul>
+          <li><a href="#Reliability_Availability">3.6.1 Reliability & Availability</a></li>
+          <li><a href="#Security">3.6.2 Security</a></li>
+          <li><a href="#Maintainability">3.6.3 Maintainability</a></li>
+          <li><a href="#Portability">3.6.4 Portability</a></li>
+        </ul>
       </ul>
       <li>
-        <a href="#Authors">5. Authors</a>
+        <a href="#Authors">Authors</a>
       </li>
     </ul>
 
@@ -89,7 +109,7 @@
     <br />
     <h3 id="Overview">1.5 Overview</h3>
     <p>
-      This SRS document is divided into four sections. Introduction, overall description, specific requirements, and supporting information. These are followed in order and each have their appropriate subsections. A table of contents is provided in supporting information for further information on the SRS layout.
+      This SRS document is divided into four sections. Introduction, overall description, specific requirements, and supporting information. These are followed in order and each have their appropriate subsections.
     </p>
     <h2 id="Overall_Description">2. Overall description</h2>
     <h3 id="Product_Perspective">2.1 Product perspective</h3>
@@ -125,12 +145,53 @@
       <li>The system shall ensure that when a user attempts to create a comment they have the option to choose whether anonymous or not.</li>
     </ul>
 
-    <h2 id="Authors">5. Authored by</h2>
+    <h3 id="Performance_Requirements">3.3 Performance Requirements</h3>
+    <h4 id="Startup_Time">3.3.1 Startup Time</h4>
+    <p>The application should display the home screen within 10 seconds after it has been clicked on.
+    </p>
+    <h4 id="Navigation">3.3.2 Navigation</h4>
+    <p>The application should allow the user to be able to navigate through the app smoothly as well as successfully execute functions noted in section 2.2.</p>
+    <h4 id="Edit_Response_Time">3.3.3 Edit Response Time</h4>
+    <p>The application should display updated values in My Bookshelf, friend’s list, and recommendations within 5 seconds after the user triggers the modify list operations or when refreshing.</p>
+    <h4 id="Additional_Performance_Requirements">3.3.4 Additional Performance Requirements</h4>
+    <ul>
+      <li>Ensure the app is easy to maintain</li>
+      <li>Increase in My Bookshelf size and user base should not interfere with performance</li>
+    </ul>
+
+    <h3 id="Logical_Database_Requirements">3.4 Logical Database Requirements</h3>
+    <ul>
+      <li>The user table contains the user’s unique id, name, gender, and email_address.</li>
+      <li>The shows table contains the show id, name, genre, director, and cast.</li>
+      <li>The movies table contains the movie id, nane, genre, director, and cast.</li>
+    </ul>
+    <p>The database will be updated frequently for upcoming TV shows and movies.</p>
+
+    <h3 id="Design_Constraints">3.5 Design Constraints</h3>
+    <p>Bookshelf will be built as a web-based application and will have constraints noted in section 2.4 which may include poor mobile compatibility.</p>
+
+    <h3 id="Software_System_Attributes">3.6 Software_System_Attributes</h3>
+    <h4 id="Reliability_Availability">3.6.1 Reliability and Availability</h4>
+    <p>Availability of the service will depend on external factors: the deployment stack and external APIs. Since the specific tools have not been decided on, the availability will vary. Free-tier deployment solutions have a rough SLA of 99.5 - 99.7% uptime.</p>
+    <h4 id="Security">3.6.2 Security</h4>
+    <p>Bookshelf will use OAuth SSO for managing user authentication. Good API practices such as: rate limiting, app-level restrictions along with input sanitation and separation between code and data will be enforced.</p>
+    <h4 id="Maintainability">3.6.3 Maintainability</h4>
+    <p>Bookshelf will be thoroughly maintained by executing proper documentation. Code will be hosted and stored on two sites that the team collectively uses and updates (Github and Google Docs). The team is to perform software quality assurance checks on the site to ensure maintainability for future courses of development.</p>
+    <h4 id="Portability">3.6.4 Portability</h4>
+    <p>Bookshelf will aim to be platform agnostic. It will be compatible with most operating systems such as Windows, macOS, iOS, and Android. On the desktop version, it must be compatible with the most commonly used browsers such as Google Chrome, and Safari.</p>
+
+    <h2 id="Authors">Authored by</h2>
     <p>
-      Grant Westerholm [2021-02-10]: section 1<br />
+      Grant Westerholm [2021-02-10]: introduction<br />
       Hayden Coulter [2021-02-10]: user characteristics<br />
       Michael Hoang [2021-02-10]: product perspective, product functions<br />
-      Wei Li [2021-02-11]: External interfaces, functions
+      Wei Li [2021-02-11]: external interfaces, functions<br />
+      Chunfung Sin[2021-02-11]: constraints<br />
+      Nick Liu [2021-02-12]: use case diagram, database requirements, portability<br />
+      Michael Hoang [2021-02-12]: reliability and availability, security<br />
+      Erica Ancajas [2021-02-12]: performance requirements, design constraints, maintainability<br />
+      Michael Hoang [2021-02-12]: snapshot-0.1.0 for srs deliverable<br />
+      Grant Westerholm [2021-02-12]: SQA<br />
     </p>
     <p><a href="#Top">Back to top</a></p>
   </body>
