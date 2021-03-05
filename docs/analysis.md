@@ -46,25 +46,37 @@ The intended audience for this document will be the client (David Brown) and the
 ### Entity Objects
 
 **Shelf**: The collection of media that is curated by the user
+
 **User**: A user of the Bookshelf web application
+
 **Media**: A piece of media that could be added to bookshelf collection
 
 ### Control Objects
 
 **ContentController**: Coordinates all activities related to searching for different media
+
 **UserController**: Coordinates all matters related to user data
+
 **MediaController**: Coordinates all activities related to Media objects
 
 ### Boundary Objects
 
 **ShelfSearchView**: Where a User searches for media and sees the results of the search
+
 **ShelfRecommendView**: Where a User sees the result of recommended content
+
 **ShelfCatalogView**: Where a User sees the collection of media
+
 **MediaEditView**: Where a User modifies existing media in the catalog
+
 **MediaCreateView**: Where a User adds media to the catalog
+
 **MediaDetailsView**: Where a User views information relevant to the media
+
 **UserInfoView**: Where a User can view account information
+
 **UserRegisterView**: Where a User creates their account
+
 **UserLoginView**: Where a User logs in to their account
 
 ## State Diagram
