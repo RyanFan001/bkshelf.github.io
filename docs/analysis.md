@@ -45,7 +45,7 @@ The intended audience for this document will be the client (David Brown) and the
 
 ### Entity Objects
 
-**Shelf**: The collection of media that is curated by the User
+**Shelf**: The collection of media that is curated by the user
 **User**: A user of the Bookshelf web application
 **Media**: A piece of media that could be added to bookshelf collection
 
@@ -65,7 +65,7 @@ The intended audience for this document will be the client (David Brown) and the
 **MediaDetailsView**: Where a User views information relevant to the media
 **UserInfoView**: Where a User can view account information
 **UserRegisterView**: Where a User creates their account
-**UserLoginView**: Where a User logs into their account
+**UserLoginView**: Where a User logs in to their account
 
 ## State Diagram
 
