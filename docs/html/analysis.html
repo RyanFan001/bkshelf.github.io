@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>bookshelf Analysis</title>
+</head>
+<body style="background-color:LightGrey;">
+<h1 style="text-align:center;", id="#Top">bookshelf</h1>
+<h1 style="text-align:center;">Analysis</h1>
+<h1>Table of Contents</h1>
+<ul>
+<li>
+<a href="#Introduction">1. Introduction</a>
+</li>
+<ul>
+<li><a href="#Project_Overview">1.1 Project Overview</a></li>
+<li><a href="#Purpose">1.2 Purpose</a></li>
+<li><a href="#Audience">1.3 Audience</a></li>
+</ul>
+<li>
+<a href="#Object_Classification">2. Object Classification</a>
+</li>
+<ul>
+<li><a href="#Object_Diagram">2.1 Object Diagram</a></li>
+<li><a href="#Entity_Objects">2.2 Entity Objects</a></li>
+<li><a href="#Control_Objects">2.3 Control Objects</a></li>
+<li><a href="#Boundary_Objects">2.4 Boundary Objects</a></li>
+</ul>
+<li>
+<a href="#State_Diagram">3. State Diagram</a>
+</li>
+<li>
+<a href="#Classes">4. Classes</a>
+</li>
+<li>
+<a href="#Authors">5. Authors</a>
+</ul>
+<h2 id="Introduction">1. Introduction</h2>
+<h3 id="Project_Overview">1.1 Project Overview</h3>
+<p>
+Bookshelf is a web-based application that allows users to track and store the status of their personal collection of media content. 
+</p>
+<h3 id="Purpose">1.2 Purpose</h3>
+<p>
+This document will thoroughly go through the analysis needed for Bookshelf and will describe all of its features and how they will function.
+</p>
+<h3 id="Audience">1.3 Audience</h3>
+<p>
+The intended audience for this document will be the client (David Brown) and the project team. They will use this document in order to understand the basis and overall analysis of Bookshelf.
+</p>
+<h2 id="Object_Classification">2. Object Classification</h2>
+<h3 id="Object_Diagram">2.1 Object Diagram</h3>
+<div style="width: 640px; height: 480px; margin: 10px; position: relative;">
+<iframe allowfullscreen frameborder="0" style="width:640px; height:480px" src="https://lucid.app/documents/embeddedchart/d5ce50fb-e05c-4e84-8070-f86c09a8255f" id="dfhhFYhYwXIS"></iframe>
+</div>
+<h3 id="Entity_Objects">2.2 Entity Objects</h3>
+<ul>
+  <li>Shelf - The collection of media that is curated by the User </li>
+  <li>User - A user of the Bookshelf web application</li>
+  <li>Media - A piece of media that could be added to bookshelf collection</li>
+</ul>
+<h3 id="Control_Objects">2.3 Control Objects</h3>
+<ul>
+  <li>ContentController - Coordinates all activities related to searching for different media</li>
+  <li>UserController - Coordinates all matters related to user data</li>
+  <li>MediaController - Coordinates all activities related to Media objects</li>
+</ul>
+<h3 id="Boundary_Objects">2.4 Boundary Objects</h3>
+<ul>
+  <li>ShelfSearchView - Where a User searches for media and sees the results of the search</li>
+  <li>ShelfRecommendView - Where a User sees the result of recommended content</li>
+  <li>ShelfCatalogView - Where a User sees the collection of media</li>
+  <li>MediaEditView - Where a User modifies existing media in the catalog</li>
+  <li>MediaCreateView - Where a User adds media to the catalog</li>
+  <li>MediaDetailsView - Where a User views information relevant to the media</li>
+  <li>UserInfoView - Where a User can view account information</li>
+  <li>UserRegisterView - Where a User creates their account</li>
+  <li>UserLoginView - Where a User logs into their account</li>
+</ul>
+<h2 id="State_Diagram">3. State Diagram</h2>
+<div style="width: 640px; height: 480px; margin: 10px; position: relative;">
+<iframe allowfullscreen frameborder="0" style="width:640px; height:480px" src="https://lucid.app/documents/embeddedchart/3c821db4-7c4f-4bb9-ad42-1d96ed54cbfd" id="kMjhrn.OycPd"></iframe>
+</div>
+<h2 id="Classes">4. Classes</h2>
+<div style="width: 640px; height: 480px; margin: 10px; position: relative;">
+<iframe allowfullscreen frameborder="0" style="width:640px; height:480px" src="https://lucid.app/documents/embeddedchart/3d886f90-b445-413d-a64a-2b15c73b138e" id="C.jhQHhBjf9d"></iframe>
+</div>
+<h2 id="Authors">5. Authored by</h2>
+<p>
+Erica Ancajas [2021-01-30]: introduction, entity objects<br>
+Wei Li [2021-01-30]: boundary objects, control objects<br>
+Michael Hoang [2021-01-30]: object diagram, state diagram, boundary objects<br>
+Nick Liu [2021-01-30]: class diagram<br>
+Erica Ancajas [2021-01-30]: SQA<br>
+Michael Hoang [2021-01-30]: snapshot-0.1.0 for analysis deliverable<br>
+</p>
+<p><a href="#Top">Back to top</a></p>
+</body>
+</html>
