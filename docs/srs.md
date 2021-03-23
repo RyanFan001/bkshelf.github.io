@@ -67,7 +67,7 @@ This SRS document is divided into four sections. Introduction, overall descripti
 
 ### Product Perspective
 
-<div style="width: 640px; height: 480px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:640px; height:480px" src="https://lucid.app/documents/embeddedchart/b804fb86-8146-4aba-9d18-0a6c67ef5768" id="a.ib9J2sAcvP"></iframe></div>
+![Product Perspective](/images/product-perspective.png)
 
 ### Product Functions
 
