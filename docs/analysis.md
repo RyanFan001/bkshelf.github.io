@@ -41,7 +41,7 @@ The intended audience for this document will be the client (David Brown) and the
 
 ### Object Diagram
 
-<div style="width: 640px; height: 480px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:640px; height:480px" src="https://lucid.app/documents/embeddedchart/d5ce50fb-e05c-4e84-8070-f86c09a8255f" id="dfhhFYhYwXIS"></iframe></div>
+![Object Diagram](/images/object-diagram.png)
 
 ### Entity Objects
 
@@ -75,7 +75,13 @@ The intended audience for this document will be the client (David Brown) and the
 
 ## State Diagram
 
-<div style="width: 640px; height: 480px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:640px; height:480px" src="https://lucid.app/documents/embeddedchart/3c821db4-7c4f-4bb9-ad42-1d96ed54cbfd" id="kMjhrn.OycPd"></iframe></div>
+![User Event](/images/state-diagrams/user-event.png)
+
+![User Controller](/images/state-diagrams/user-controller.png)
+
+![Content Controller](/images/state-diagrams/content-controller.png)
+
+![Media Controller](/images/state-diagrams/media-controller.png)
 
 ## Classes
 
@@ -91,3 +97,4 @@ The intended audience for this document will be the client (David Brown) and the
 | Nick Liu      | 2021-03-01 | class diagram                                   |
 | Erica Ancajas | 2021-03-01 | SQA                                             |
 | Michael Hoang | 2021-03-01 | snapshot-0.1.0 for analysis deliverable         |
+| Michael Hoang | 2021-03-15 | export lucid chart diagrams to png              |
