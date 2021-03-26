@@ -43,8 +43,6 @@ The target audience of this document are the developers. This document serves as
 
 This document is written regarding IEEE Recommended Practice for Software Design Descriptions. It describes the necessary information content and recommendations for the organization of the software design specification (SDD-a representation of the software system) as a medium to convey software design information and is suitable for paper documents.
 
-## System Overview
-
 ## Decomposition Description
 
 ### Module Decomposition
@@ -108,18 +106,18 @@ This document is written regarding IEEE Recommended Practice for Software Design
 
 ![Shelf](/images/screens/shelf.png)
 
-| Field                 | Type                | Description                                                                  |
-| :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
-| navBottom             | Navigation (Button) | Navigate between ShelfHomeView, ShelfSearchView, ShelfView, and UserInfoView |
-| addNewMediaButton     | Button              |                                                                              |
-| mediaCardHorizontal   | Card (Div)          |                                                                              |
-| mediaType             | Select              |                                                                              |
-| mediaTitleInput       | Button              |                                                                              |
-| mediaCreatorInput     | Input               |                                                                              |
-| mediaRating           | Rating (Div)        |                                                                              |
-| notesTextInput        | Text Field          |                                                                              |
-| confirmNewMediaButton | Button              |                                                                              |
-| cancelNewMediaButton  | Button              |                                                                              |
+| Field                 | Type                | Description                                                                                |
+| :-------------------- | :------------------ | :----------------------------------------------------------------------------------------- |
+| navBottom             | Navigation (Button) | Navigate between ShelfHomeView, ShelfSearchView, ShelfView, and UserInfoView               |
+| addNewMediaButton     | Button              | Links to MediaCreateView                                                                   |
+| mediaCardHorizontal   | Card (Div)          | Contains the cover, title, creator name, and description. Links to SearchMediaDetailsView. |
+| mediaType             | Select              | Select the type of media                                                                   |
+| mediaTitleInput       | Button              | Title of media                                                                             |
+| mediaCreatorInput     | Input               | Creator of media                                                                           |
+| mediaRating           | Rating (Div)        | Rating out of 10                                                                           |
+| notesTextInput        | Text Field          | User notes about media                                                                     |
+| confirmNewMediaButton | Button              | Add media to the Shelf                                                                     |
+| cancelNewMediaButton  | Button              | Cancels new media creation                                                                 |
 
 | Identification   | Purpose                                                                                                            |
 | :--------------- | :----------------------------------------------------------------------------------------------------------------- |
@@ -135,9 +133,9 @@ This document is written regarding IEEE Recommended Practice for Software Design
 | navBottom          | Navigation (Button) | Navigate between ShelfHomeView, ShelfSearchView, ShelfView, and UserInfoView |
 | logoutButton       | Button              | Logs user out and links to UserLoginView                                     |
 | iconEditProfile    | Icon (Button)       | Displays user profile picture and clicking allows user to change photo       |
-| nameEditButton     |                     |
-| mailEditButton     |                     |
-| passwordEditButton |                     |
+| nameEditButton     | Button              | Allows user to change name                                                   |
+| mailEditButton     | Button              | Allows user to change email                                                  |
+| passwordEditButton | Button              | Allows user to change password                                               |
 
 | Identification | Purpose                                               |
 | :------------- | :---------------------------------------------------- |
@@ -176,7 +174,31 @@ This document is written regarding IEEE Recommended Practice for Software Design
 
 ### Module Detailed Design
 
-### Design Rationale
+| Function     | Description                                                                                                                                                           |
+| :----------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| getName()    | After successful login, the users name is retrieved. Is called to display name on certain screens.                                                                    |
+| getContent() | Retrieves requested content. Is not called again until last content is closed.                                                                                        |
+| getMedia     | Retrieves requested media. Can be called sequentially with queue held in memory.                                                                                      |
+| setShelf()   | Adds requested item to users personal shelf. Request stored in database and will save throughout sessions until removed. Can be seen when the user views their shelf. |
+| setRating()  | Gives the selected media a rating. Can be saved throughout sessions and seen when user views the media. User can re rate at anytime.                                  |
+
+### Documentation
+
+#### Frontend
+
+- **Languages**: HTML, CSS, Javascript
+
+- **Iconography**: Feathericons
+
+- **Frameworks**: React.js, Next.js, Tailwind CSS
+
+#### Backend
+
+- **Languages**: Java
+
+- **Deployment**: Vercel
+
+- **Database**: MongoDB
 
 ## Authors
 
@@ -189,3 +211,5 @@ This document is written regarding IEEE Recommended Practice for Software Design
 | Grant Westerholm | 2021-03-25 | Class diagram, package interactions                    |
 | Michael Hoang    | 2021-03-25 | Interface Descriptions, Module Interface + Screens     |
 | Michael Hoang    | 2021-03-25 | snapshot-0.0.1 for testing layout and images (Pre SQA) |
+| Benjamin Gelhard | 2021-03-26 | Module detailed design                                 |
+| Michael Hoang    | 2021-03-26 | snapshot-0.0.2 (Pre SQA)                               |
