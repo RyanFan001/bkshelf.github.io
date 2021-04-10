@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yan.dao.CategoryDao">
+<resultMap id="baseMap" type="com.yan.entity.Category">
+        <id column="id" jdbcType="INTEGER" property="id" />
+</resultMap>
+<select id="getList"  resultMap="baseMap">
+	SELECT * FROM Category limit #{startRow},#{endRow} 
+</select>
+
+<select id="getByState"  resultMap="baseMap">
+	SELECT * FROM Category where type=#{type}
+</select>
+
+<select id="getTotal"  resultType="long">
+	SELECT count(*) FROM Category
+</select>
+
+<insert id="insert" parameterType="com.yan.entity.Category">
+insert into Category(id,name) 
+values(#{id},#{name});
+</insert>
+<delete id="delete" parameterType="java.lang.Integer" >
+    delete from Category where id = #{id}
+  </delete>
+
+<update id="update">
+	update Category
+	<set>
+		<if test="name !=null and name !=''">name=#{name},</if>
+	</set>
+	where Id=${id}
+</update>
+</mapper>
