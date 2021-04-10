@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yan.dao.ArticleDao">
+<resultMap id="baseMap" type="com.yan.entity.Article">
+        <id column="id" jdbcType="INTEGER" property="id" />
+</resultMap>
+<select id="getByPage"  resultMap="baseMap">
+	SELECT * FROM Article where 1=1
+	<if test="article.title != null and article.title != ''"> and title like '%${article.title}%'</if>
+	<if test="article.cid != null "> and cid = #{article.cid}</if>
+	<if test="article.state != null "> and state = #{article.state}</if>
+	limit #{p.startRow},#{p.endRow}  
+</select>
+<select id="getTotal"  resultType="long">
+	SELECT count(*) FROM Article where 1=1
+	<if test="title != null and title != ''"> and title like '%${title}%'</if>
+	<if test="cid != null "> and cid = #{cid}</if>
+</select>
+
+<select id="getIdByState"  resultMap="baseMap">
+	SELECT * FROM Article where state = 1
+</select>
+
+<select id="searchById"  resultMap="baseMap">
+	SELECT * FROM Article where id=#{id}
+</select>
+<insert id="insert" parameterType="com.yan.entity.Article">
+insert into Article(title,img,content,cid,state,cTime) 
+values(#{title},#{img},#{content},#{cid},#{state},now());
+</insert>
+<delete id="delete" parameterType="java.lang.Integer" >
+    delete from Article where id = #{id}
+  </delete>
+
+<update id="updateById">
+	update Article
+	<set>
+	<if test="title !=null and title !=''">title=#{title},</if>
+	<if test="img !=null and img !=''">img=#{img},</if>
+	<if test="content !=null and content !=''">content=#{content},</if>
+	<if test="cid !=null">cid=#{cid},</if>
+	<if test="state !=null">state=#{state},</if>
+	</set>
+	where Id=${id}
+</update>
+
+</mapper>

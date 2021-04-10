@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yan.dao.MovieDao">
+<resultMap id="baseMap" type="com.yan.entity.Movie">
+        <id column="id" jdbcType="INTEGER" property="id" />
+</resultMap>
+<select id="getByPage"  resultMap="baseMap">
+	SELECT m.*,c.name cname,u.name userName FROM Movie m 
+	left join category c on c.id=m.cid
+	left join user u on u.id=m.uid
+	where 1=1
+	<if test="movie.title != null and movie.title != ''"> and m.title like '%${movie.title}%'</if>
+	<if test="movie.cid != null "> and m.cid = #{movie.cid}</if>
+	limit #{p.startRow},#{p.endRow}  
+</select>
+
+<select id="getIdByState"  resultMap="baseMap">
+	SELECT * FROM Movie where state = 1
+</select>
+
+<select id="getTotal"  resultType="long">
+	SELECT count(*) FROM Movie where 1=1
+	<if test="title != null and title != ''"> and title like '%${title}%'</if>
+	<if test="cid != null "> and cid = #{cid}</if>
+</select>
+
+<select id="searchById"  resultMap="baseMap">
+	SELECT * FROM Movie where id=#{id}
+</select>
+<insert id="insert" parameterType="com.yan.entity.Movie">
+insert into Movie(title,uid,introduce,img,cid,score,cTime) 
+values(#{title},#{uid},#{introduce},#{img},#{cid},#{score},now());
+</insert>
+<delete id="delete" parameterType="java.lang.Integer" >
+    delete from Movie where id = #{id}
+  </delete>
+
+<update id="updateById">
+	update Movie
+	<set>
+	<if test="title !=null and title !=''">title=#{title},</if>
+	<if test="img !=null and img !=''">img=#{img},</if>
+	<if test="introduce !=null and introduce !=''">introduce=#{introduce},</if>
+	<if test="cid !=null">cid=#{cid},</if>
+	<if test="score !=null">score=#{score},</if>
+	</set>
+	where Id=${id}
+</update>
+
+</mapper>
